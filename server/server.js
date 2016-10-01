@@ -10,7 +10,7 @@ var server = require ('http').createServer(app);
 // 	console.log('mongoDB is open');
 // });
 
-var port = process.env.PORT || 9876;
+var port = process.env.PORT || 3020;
 
 require('./config/middleware.js') (app,express);
 require('./config/routes.js') (app,express);
