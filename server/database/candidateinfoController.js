@@ -18,7 +18,7 @@ module.exports = {
 				if ( rows[0].password === password){
 					var token = jwt.encode(rows[0], 'secret');
 				    res.setHeader('x-access-token',token);
-				    res.json({x:7,token: token, user : rows[0]['id']});
+				    res.json({token: token, user : rows[0]['id']});
 				}else{
 					res.status(500).send('Wrong Password');
 				}		  
@@ -73,20 +73,21 @@ module.exports = {
 		    destance: candidate.destance,
 		    camp_Location: candidate.camp_Location,
 		    videoLink: candidate.videoLink,
-		    states: candidate.states 
+		    states: candidate.states
 		}
-		connection.query('UPDATE candidateinfo SET name = :name, email = :email,'+
-		' password = :password,phone = :phone, gender = :gender,dateOfBirth = :dateOfBirth'+
-		'nattionalaty = :nattionalaty,residence = :residence,destance = :destance,'+
-		' camp_Location = :camp_Location, videoLink = :videoLink, states = :states WHERE id = ?',
-		 post, function(err, results) {
-			if (err){
-				throw err;
-			} else{
-				res.json({rows : rows});
-		    	console.log(rows.insertId);
-			}
-		});
+		connection.query('UPDATE candidateinfo SET ? WHERE Id = ?', [post, 1])
+		//connection.query('UPDATE candidateinfo SET name = :name, email = :email,
+		// password = :password,phone = :phone, gender = :gender, dateOfBirth = :dateOfBirth,
+		// nattionalaty = :nattionalaty, residence = :residence, destance = :destance,
+		// camp_Location = :camp_Location, videoLink = :videoLink, states = :states WHERE id = ?',
+		//post , function(err, results) {
+			// if (err){
+			// 	throw err;
+			// } else{
+			// 	res.json({rows : rows});
+		 //    	console.log(rows.insertId);
+			// }
+		//});
 	},
 
 	getCandidate : function (req, res) {
@@ -108,10 +109,6 @@ module.exports = {
 			throw err;
 		  }
 		});
-	},
-
-	updateCandidate : function (req, res) {
-		
 	},
 
 	deletCandidate : function (req, res) {
