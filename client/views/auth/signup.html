@@ -1,9 +1,9 @@
 <div>
 <h3>Please Signup in English</h3>
 	<form ng-submit="signup()">
-		<input type="text" placeholder="Please Enter Your Full Name" ng-model="">Name
-		<input type="password" placeholder="Please Enter Your Password" ng-model="">Password<br>
-		<input type="text" placeholder="Please Enter Your Email" ng-model="">email Address<br>
+		<input type="text" placeholder="Please Enter Your Full Name" ng-model="user.name">Name
+		<input type="password" placeholder="Please Enter Your Password" ng-model="user.password">Password<br>
+		<input type="text" placeholder="Please Enter Your Email" ng-model="user.email">email Address<br>
 		<button>Submit</button>
 	</form>
 	<a href="#/signin" >Already have an account? <strong>Signin</strong> ...</a>
