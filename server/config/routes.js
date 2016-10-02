@@ -1,7 +1,19 @@
-var Video = require('../database/databaseController.js');
+var candidateinfo = require('../database/candidateinfoController.js');
 var helpers = require('./helpers.js'); // our custom middleware
 
 module.exports = function (app, express) {
+
+
+	//============================================================================
+	/* 								candidateinfo  								*/
+	//============================================================================
+	app.post('/api/candidateinfo/create', candidateinfo.createCandidate);
+	app.get('/api/candidateinfo/getAllCandidate', candidateinfo.getAllCandidate);
+	// app.get('/api/candidateinfo/getCandidate', candidateinfo.getCandidate);
+	// app.get('/api/candidateinfo/', candidateinfo.getUsers);
+	// app.get('/api/candidateinfo/', candidateinfo.getUsers);
+	
+
 
 	
   // If a request is sent somewhere other than the routes above,
