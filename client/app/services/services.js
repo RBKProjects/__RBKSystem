@@ -4,10 +4,11 @@ angular.module('Admission.servics',[])
 /*							Auth factory 	     				   */
 //===================================================================
 .factory('Auth',function($http){
+	
 	var signin=function(data){
 		return $http({
 			method:'POST',
-			url:'/api/',
+			url:'/api/candidateinfo/signin',
 			data:data
 		})
 		.then(function(resp){
@@ -18,7 +19,7 @@ angular.module('Admission.servics',[])
 	var signup=function(data){
 		return $http({
 			method:'POST',
-			url:'/api',
+			url:'/api/candidateinfo/signup',
 			data:data
 		})
 		.then(function(resp){
@@ -36,10 +37,10 @@ angular.module('Admission.servics',[])
 /*				  candidate PersonalInfo factory 	     		   */
 //===================================================================
 .factory('PersonalInfo',function($http){
-	var userInfo=function(data){
+	var setUserInfo=function(data){
 		return $http({
 			mehtod:'POST',
-			url:'/api/',
+			url:'/api/candidateinfo/updateCandidate',
 			data:data
 		})
 		.then(function(resp){
