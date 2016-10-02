@@ -1,10 +1,27 @@
-angular.module('Admission',[])
+angular.module('Admission',[
+  'Admission.auth',
+  'Admission.Personal',
+  'Admission.servics',
+  'ngRoute'
+])
 .config(function($routeProvider, $httpProvider){
 	$routeProvider
-	.when('/index',{
-		templateUrl: '',
-		controller: ''
+  .when('/',{
+    templateUrl:'views/auth/signin.html',
+    controller:'AuthController'
+  })
+	.when('/signin',{
+		templateUrl: 'views/auth/signin.html',
+		controller: 'AuthController'
 	})
+  .when('/signup',{
+    templateUrl:'views/auth/signup.html',
+    controller: 'AuthController'
+  })
+  .when('/personalInfo',{
+    templateUrl: 'views/personalInfo/personalInfo.html',
+    controller: 'PersonalController'
+  })
 	$httpProvider.interceptors.push('AttachTokens');
 })
 .factory('AttachTokens',function($window){
