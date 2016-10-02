@@ -7,19 +7,19 @@ angular.module('Admission',[
 .config(function($routeProvider, $httpProvider){
 	$routeProvider
   .when('/',{
-    templateUrl:'views/auth/signin.html',
+    templateUrl:'app/views/auth/signin.html',
     controller:'AuthController'
   })
 	.when('/signin',{
-		templateUrl: 'views/auth/signin.html',
+		templateUrl: 'app/views/auth/signin.html',
 		controller: 'AuthController'
 	})
   .when('/signup',{
-    templateUrl:'views/auth/signup.html',
+    templateUrl:'app/views/auth/signup.html',
     controller: 'AuthController'
   })
   .when('/personalInfo',{
-    templateUrl: 'views/personalInfo/personalInfo.html',
+    templateUrl: 'app/views/personalInfo/personalInfo.html',
     controller: 'PersonalController'
   })
 	$httpProvider.interceptors.push('AttachTokens');
