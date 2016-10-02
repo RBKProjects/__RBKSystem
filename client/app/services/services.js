@@ -1,4 +1,8 @@
 angular.module('Admission.servics',[])
+
+//===================================================================
+/*							Auth factory 	     				   */
+//===================================================================
 .factory('Auth',function($http){
 	var signin=function(data){
 		return $http({
@@ -27,6 +31,10 @@ angular.module('Admission.servics',[])
 		signup: signup
 	})
 })
+
+//===================================================================
+/*				  candidate PersonalInfo factory 	     		   */
+//===================================================================
 .factory('PersonalInfo',function($http){
 	var userInfo=function(data){
 		return $http({
@@ -41,5 +49,5 @@ angular.module('Admission.servics',[])
 
 	return ({
 		userInfo: userInfo
-	})
-})
+	});
+});
