@@ -7,6 +7,8 @@ module.exports = function (app, express) {
 	//============================================================================
 	/* 								candidateinfo  								*/
 	//============================================================================
+	app.post('/api/candidateinfo/signin',candidateinfo.signin);
+	app.post('/api/candidateinfo/signup',candidateinfo.signup);
 	app.post('/api/candidateinfo/create', candidateinfo.createCandidate);
 	app.get('/api/candidateinfo/getAllCandidate', candidateinfo.getAllCandidate);
 	// app.get('/api/candidateinfo/getCandidate', candidateinfo.getCandidate);
