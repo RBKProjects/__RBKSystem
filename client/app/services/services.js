@@ -49,5 +49,5 @@ angular.module('Admission.servics',[])
 
 	return ({
 		userInfo: userInfo
-	})
-})
+	});
+});
