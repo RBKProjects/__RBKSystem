@@ -72,26 +72,13 @@ module.exports = {
 		    residence: candidate.residence,
 		    destance: candidate.destance,
 		    camp_Location: candidate.camp_Location,
-		    videoLink: candidate.videoLink,
-		    states: candidate.states
+		    videoLink: candidate.videoLink
 		}
-		connection.query('UPDATE candidateinfo SET ? WHERE Id = ?', [post, 1])
-		//connection.query('UPDATE candidateinfo SET name = :name, email = :email,
-		// password = :password,phone = :phone, gender = :gender, dateOfBirth = :dateOfBirth,
-		// nattionalaty = :nattionalaty, residence = :residence, destance = :destance,
-		// camp_Location = :camp_Location, videoLink = :videoLink, states = :states WHERE id = ?',
-		//post , function(err, results) {
-			// if (err){
-			// 	throw err;
-			// } else{
-			// 	res.json({rows : rows});
-		 //    	console.log(rows.insertId);
-			// }
-		//});
+		connection.query('UPDATE candidateinfo SET ? WHERE id = ?', [post, 1])
 	},
 
 	getCandidate : function (req, res) {
-		var sql    = 'SELECT * FROM candidateinfo WHERE name = ' + connection.escape(req.body.name);
+		var sql    = 'SELECT * FROM candidateinfo WHERE id = ' + connection.escape(req.body.id);
 		connection.query(sql, function(err, rows, fields) {
 		  if (err) throw err;
 		  console.log('The solution is: ', rows);
