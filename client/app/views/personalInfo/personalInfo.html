@@ -1,54 +1,60 @@
 <div class="container">
 <div class="col-sm-3"></div>
-	<div class="jumbotron col-sm-6" style="height: 900px;">
+	<div class="jumbotron col-sm-6">
 		<h2 style="text-align: center; color: #cc0099">Biographic Info المعلومات الشخصية</h2>
 		<div class="form-group">
 			<input type="text" class="form-control" placeholder="Full Name" ng-model="userInfo.name"><br>
 			<input type="text" class="form-control" placeholder="Phone Number" ng-model="userInfo.phone"><br>
-			<input type="text" class="form-control" placeholder="Age" ng-model="userInfo.age"><br>
-			<input type="text" class="form-control" placeholder="Nationality" ng-model="userInfo.nationality"><br>
+			<input type="text" class="form-control" placeholder="Date of Birth" ng-model="userInfo.dateOfBirth"><br>
+			<input type="text" class="form-control" placeholder="Nationality" ng-model="userInfo.nattionalaty"><br>
+			<input type="text" class="form-control" placeholder="email Address" ng-model="userInfo.email"><br>
 			<input type="text" class="form-control" placeholder="Country of Residence" ng-model="userInfo.residence"><br>
 			<br>
+
 			<label for="gender">Gender</label> <br>
 			<div class="container">
 				<label class="radio-inline">
-				  <input type="radio" value="male"> Male
+				  <input type="radio" value="male" ng-model="userInfo.gender"> Male
 				</label><br>
 
 				<label class="radio-inline">
-				  <input type="radio" value="Femal"> Female
+				  <input type="radio" value="femal" ng-model="userInfo.gender"> Female
 				</label><br>
 
 				<label class="radio-inline">
-				  <input type="radio" value="other"> Other
+				  <input type="radio" value="other" ng-model="userInfo.gender"> Other
 				</label><br>
 			</div>
 			<br>
 			 
-			<div class="container">
 			<label for="camplPlace">Where would you prefer to study?</label><br>
+			<div class="container">
 				<label class="radio-inline">
-				  <input type="radio" name="inlineRadioOptions" value="amman"> Amman
+				  <input type="radio" value="amman" ng-model="userInfo.camp_Location"> Amman
 				</label><br>
 
 				<label class="radio-inline">
-				  <input type="radio" name="inlineRadioOptions" value="mafraq"> Mafraq
+				  <input type="radio" value="mafraq" ng-model="userInfo.camp_Location"> Mafraq
 				</label><br>
 
 				<label class="radio-inline">
-				  <input type="radio" name="inlineRadioOptions" value="either"> Either Amman Or Mafraq 
+				  <input type="radio" value="either" ng-model="userInfo.camp_Location"> Either Amman Or Mafraq 
 				</label><br>
 			</div>
 			<br>
-			<label for="distanc">I can travel to West Amman or Mafraq in less than 40 minutes.</label><br>
 
-			<label class="radio-inline">
-			  <input type="radio" name="inlineRadioOptions" value="yes"> Yes
-			</label><br>
-			<label class="radio-inline">
-			  <input type="radio" name="inlineRadioOptions" value="no"> No
-			</label>
+			<label for="distanc">I can travel to West Amman or Mafraq in less than 40 minutes.</label><br>
+			<div class="container">
+				<label class="radio-inline">
+				  <input type="radio" value="yes" ng-model="userInfo.destance"> Yes
+				</label><br>
+				<label class="radio-inline">
+				  <input type="radio" value="no" ng-model="userInfo.destance"> No
+				</label>
+			</div>
+
 		</div>
+		
 		<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;" ng-click="sendUserInfo()">NEXT</button>
 	</div>
 </div>

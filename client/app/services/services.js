@@ -38,21 +38,24 @@ angular.module('Admission.servics',[])
 //===================================================================
 .factory('PersonalInfo',function($http){
 	var setUserInfo=function(data){
+		console.log('thereeeee')
 		return $http({
-			mehtod:'POST',
+			method:'POST',
 			url:'/api/candidateinfo/updateCandidate',
 			data:data
 		})
 		.then(function(resp){
-			return resp.data;
+			console.log('respppp')
+			return resp;
 		})
 	};
 
 	var getUserInfo=function(id){
+		console.log('there')
 		return $http({
 			method:'POST',
 			url:'/api/candidateinfo/getCandidate',
-			data: id
+			data: {id:id}
 		})
 		.then(function(resp){
 			return resp.data;
