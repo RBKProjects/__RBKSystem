@@ -6,3 +6,13 @@ background: red;
 	margin:auto;
 	height: 350px;
 }
+
+/*input[type=radio] {
+    border: 0px;
+    width: 100%;
+    height: 1em;
+}*/
+
+label{
+	font-size: 18px;
+}

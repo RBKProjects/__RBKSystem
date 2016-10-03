@@ -14,10 +14,6 @@ angular.module('Admission',[
 		templateUrl: 'app/views/auth/signin.html',
 		controller: 'AuthController'
 	})
-  .when('/signup',{
-    templateUrl:'app/views/auth/signup.html',
-    controller: 'AuthController'
-  })
   .when('/personalInfo',{
     templateUrl: 'app/views/personalInfo/personalInfo.html',
     controller: 'PersonalController'
