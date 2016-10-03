@@ -6,10 +6,11 @@ var jwt = require('jwt-simple');
 var connection = db ;
 
 module.exports = {
+
 	signin : function (req, res) {
 		var email = req.body.email;
 		var password = req.body.password;
-		var sql    = 'SELECT * FROM candidateinfo WHERE email = ' + connection.escape(req.body.email);
+		var sql    = 'SELECT * FROM staff WHERE email = ' + connection.escape(req.body.email);
 		connection.query(sql, function(err, rows, fields) {
 		  if (err){
 		  	throw err;	
@@ -36,13 +37,13 @@ module.exports = {
 			email : candidate.email,
 			password : candidate.password
 		}
-		var sql    = 'SELECT * FROM candidateinfo WHERE email = ' + connection.escape(candidate.email);
+		var sql    = 'SELECT * FROM staff WHERE email = ' + connection.escape(candidate.email);
 		connection.query(sql, function(err, rows, fields) {
 		  if (!err){
 		  		if(rows.length > 0){ 
 			  		res.json({rows : rows, msg : 'User exist'});
 			  	}else{
-					connection.query('INSERT INTO candidateinfo SET ?', newCandidate, function (err, rows) {
+					connection.query('INSERT INTO staff SET ?', newCandidate, function (err, rows) {
 						if (err){
 							throw err;
 						} else{
@@ -62,50 +63,31 @@ module.exports = {
 	updateCandidate : function (req, res) {
 		var candidate = req.body;
 		var post  = {
+		    camp_Location: candidate.camp_Location,
+		    states : candidate.states
+		}
+		connection.query('UPDATE candidateinfo SET ? WHERE Id = ?', [post, 1])
+	},
+
+	updateInfo : function (req, res) {
+		var candidate = req.body;
+		var post  = {
 		    name: candidate.name,
 		    email: candidate.email,
 		    password: candidate.password,
 		    phone: candidate.phone,
 		    gender: candidate.gender,
-		    dateOfBirth: candidate.dateOfBirth,
-		    nattionalaty: candidate.nattionalaty,
-		    residence: candidate.residence,
-		    destance: candidate.destance,
-		    camp_Location: candidate.camp_Location,
-		    videoLink: candidate.videoLink
+		    linkin: candidate.linkin,
+		    facebook : candidate.facebook,
+		    slack: candidate.slack,
+		    position: candidate.position,
+		    started_date: candidate.started_date,
+		    salary: candidate.salary,
+		    description: candidate.description
 		}
-		connection.query('UPDATE candidateinfo SET ? WHERE id = ?', [post, 1])
-	},
-
-	getCandidate : function (req, res) {
-		var sql    = 'SELECT * FROM candidateinfo WHERE id = ' + connection.escape(req.body.id);
-		connection.query(sql, function(err, rows, fields) {
-		  if (err) throw err;
-		  console.log('The solution is: ', rows);
-		  res.json({rows : rows});
-		});
-	},
-
-	getAllCandidate : function (req, res) {
-		var sql = 'SELECT * FROM candidateinfo';
-		connection.query(sql, function(err, rows, fields) {
-		  if (!err){
-		  	console.log('The solution is: ', rows);
-		  	res.json({rows : rows});
-		  }else{
-			throw err;
-		  }
-		});
-	},
-
-	deletCandidate : function (req, res) {
-		var sql = 'DELETE FROM candidateinfo WHERE email = ' + req.body.email;
-		connection.query(sql, function (err, result) {
-		  if (err) throw err;
-
-		  console.log('deleted ' + result.affectedRows + ' rows');
-		})
+		connection.query('UPDATE candidateinfo SET ? WHERE Id = ?', [post, candidate.id])
 	}
+	
 
 }
  
