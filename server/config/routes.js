@@ -11,7 +11,7 @@ module.exports = function (app, express) {
 	app.post('/api/candidateinfo/signup',candidateinfo.signup);
 	app.post('/api/candidateinfo/updateCandidate', candidateinfo.updateCandidate);
 	app.get('/api/candidateinfo/getAllCandidate', candidateinfo.getAllCandidate);
-	// app.get('/api/candidateinfo/getCandidate', candidateinfo.getCandidate);
+	app.get('/api/candidateinfo/getCandidate', candidateinfo.getCandidate);
 	// app.get('/api/candidateinfo/', candidateinfo.getUsers);
 	// app.get('/api/candidateinfo/', candidateinfo.getUsers);
 	

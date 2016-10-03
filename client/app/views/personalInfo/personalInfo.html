@@ -3,14 +3,13 @@
 	<div class="jumbotron col-sm-6" style="height: 900px;">
 		<h2 style="text-align: center; color: #cc0099">Biographic Info المعلومات الشخصية</h2>
 		<div class="form-group">
-			<input type="text" class="form-control" placeholder="First Name الاسم الأول "><br>
-			<input type="text" class="form-control" placeholder="Last / Family Name اسم العائلة"><br>
-			<input type="text" class="form-control" placeholder="Phone Number رقم الهاتف"><br>
-			<input type="text" class="form-control" placeholder="Age العمر"><br>
-			<input type="text" class="form-control" placeholder="Nationality الجنسية"><br>
-			<input type="text" class="form-control" placeholder="Country of Residence مكان الإقامة"><br>
+			<input type="text" class="form-control" placeholder="Full Name" ng-model="userInfo.name"><br>
+			<input type="text" class="form-control" placeholder="Phone Number" ng-model="userInfo.phone"><br>
+			<input type="text" class="form-control" placeholder="Age" ng-model="userInfo.age"><br>
+			<input type="text" class="form-control" placeholder="Nationality" ng-model="userInfo.nationality"><br>
+			<input type="text" class="form-control" placeholder="Country of Residence" ng-model="userInfo.residence"><br>
 			<br>
-			<label for="gender">Gender الجنس</label> <br>
+			<label for="gender">Gender</label> <br>
 			<div class="container">
 				<label class="radio-inline">
 				  <input type="radio" value="male"> Male
@@ -27,7 +26,7 @@
 			<br>
 			 
 			<div class="container">
-			<label for="camplPlace">Where would you prefer to study? أين تفضل أن تدرس?</label><br>
+			<label for="camplPlace">Where would you prefer to study?</label><br>
 				<label class="radio-inline">
 				  <input type="radio" name="inlineRadioOptions" value="amman"> Amman
 				</label><br>
@@ -37,11 +36,11 @@
 				</label><br>
 
 				<label class="radio-inline">
-				  <input type="radio" name="inlineRadioOptions" value="either"> Either Amman Or Mafraq عمان أو المفرق
+				  <input type="radio" name="inlineRadioOptions" value="either"> Either Amman Or Mafraq 
 				</label><br>
 			</div>
 			<br>
-			<label for="distanc">I can travel to West Amman or Mafraq in less than 40 minutes. أعيش على بعد 40 دقيقة من عمان أو المفرق </label><br>
+			<label for="distanc">I can travel to West Amman or Mafraq in less than 40 minutes.</label><br>
 
 			<label class="radio-inline">
 			  <input type="radio" name="inlineRadioOptions" value="yes"> Yes
@@ -50,6 +49,6 @@
 			  <input type="radio" name="inlineRadioOptions" value="no"> No
 			</label>
 		</div>
-		<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;" ng-click="signup()">NEXT</button>
+		<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;" ng-click="sendUserInfo()">NEXT</button>
 	</div>
 </div>

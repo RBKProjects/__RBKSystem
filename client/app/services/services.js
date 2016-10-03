@@ -12,7 +12,7 @@ angular.module('Admission.servics',[])
 			data:data
 		})
 		.then(function(resp){
-			return resp;
+			return resp.data;
 		})
 	};
 
@@ -23,7 +23,7 @@ angular.module('Admission.servics',[])
 			data:data
 		})
 		.then(function(resp){
-			return resp;
+			return resp.data;
 		})
 	};
 
@@ -44,11 +44,23 @@ angular.module('Admission.servics',[])
 			data:data
 		})
 		.then(function(resp){
-			return resp;
+			return resp.data;
+		})
+	};
+
+	var getUserInfo=function(id){
+		return $http({
+			method:'POST',
+			url:'/api/candidateinfo/getCandidate',
+			data: id
+		})
+		.then(function(resp){
+			return resp.data;
 		})
 	};
 
 	return ({
-		userInfo: userInfo
+		setUserInfo: setUserInfo,
+		getUserInfo: getUserInfo
 	});
 });
