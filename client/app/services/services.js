@@ -66,4 +66,25 @@ angular.module('Admission.servics',[])
 		setUserInfo: setUserInfo,
 		getUserInfo: getUserInfo
 	});
-});
+})
+
+//===================================================================
+/*				  candidate PersonalInfo factory 	     		   */
+//===================================================================
+
+.factory('Agreement',function($http){
+	var sendAgreement=function(userId){
+		return $http({
+			method:'GET',
+			url:'',
+			data: userId
+		})
+		.then(function(resp){
+			return resp.data;
+		})
+	}
+
+	return({
+		sendAgreement: sendAgreement
+	})
+})

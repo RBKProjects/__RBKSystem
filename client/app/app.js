@@ -1,6 +1,7 @@
 angular.module('Admission',[
   'Admission.auth',
   'Admission.Personal',
+  'Admission.Agreement',
   'Admission.servics',
   'ngRoute'
 ])
@@ -18,6 +19,11 @@ angular.module('Admission',[
     templateUrl: 'app/views/personalInfo/personalInfo.html',
     controller: 'PersonalController'
   })
+  .when('/agreement',{
+    templateUrl: 'app/views/rbkAgreement/rbkAgreement.html',
+    controller: 'AgreenmentController'
+  })
+  
 	$httpProvider.interceptors.push('AttachTokens');
 })
 .factory('AttachTokens',function($window){
