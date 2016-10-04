@@ -1,29 +1,60 @@
-<div>
-<form ng-submit="">
-	<input type="text" placeholder="Please Enter Your Fist Name">First Name<br>
-	<input type="text" placeholder="Please Enter Your Last Name">Last Name<br>
-	<input type="text" placeholder="Please Enter Your Phone Number">Phone Number<br>
-	<input type="text" placeholder="Please Enter Your Age">Age<br>
-	<input type="text" placeholder="Please Enter Your Nationality">Nationality<br>
-	
-	<label for="gender">Gender</label><br>
-	<input type="radio" value="male">Male<br>
-	<input type="radio" value="female">Female<br>
-	<input type="radio" value="other">Other<br>
-	
-	<label for="residence">Country of Residence?</label><br>
-	<input type="radio" value="Jordan">Jordan<br>
-	<input type="radio" value="other">other<br>
-	<input type="text" placeholder="Please Enter Location">Location<br>
-	
-	<label for="camplPlace">Where Would You Prefer to Study?</label><br>
-	<input type="radio" value="amman">Amman<br>
-	<input type="radio" value="mafraq">Mafraq<br>
-	<input type="radio" value="either">Either Amman Or Mafraq<br>
+<div class="container">
+<div class="col-sm-3"></div>
+	<div class="jumbotron col-sm-6">
+		<h2 style="text-align: center; color: #cc0099">Biographic Info المعلومات الشخصية</h2>
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Full Name" ng-model="userInfo.name"><br>
+			<input type="text" class="form-control" placeholder="Phone Number" ng-model="userInfo.phone"><br>
+			<input type="text" class="form-control" placeholder="Date of Birth" ng-model="userInfo.dateOfBirth"><br>
+			<input type="text" class="form-control" placeholder="Nationality" ng-model="userInfo.nattionalaty"><br>
+			<input type="text" class="form-control" placeholder="email Address" ng-model="userInfo.email"><br>
+			<input type="text" class="form-control" placeholder="Country of Residence" ng-model="userInfo.residence"><br>
+			<br>
 
-	<label for="distanc">I can travel to West Amman or Mafraq in less than 40 minutes</label><br>
-	<input type="radio" value="yes">Yes<br>
-	<input type="radio" value="no">No<br>
-	
-</form>
+			<label for="gender">Gender</label> <br>
+			<div class="container">
+				<label class="radio-inline">
+				  <input type="radio" value="male" ng-model="userInfo.gender"> Male
+				</label><br>
+
+				<label class="radio-inline">
+				  <input type="radio" value="femal" ng-model="userInfo.gender"> Female
+				</label><br>
+
+				<label class="radio-inline">
+				  <input type="radio" value="other" ng-model="userInfo.gender"> Other
+				</label><br>
+			</div>
+			<br>
+			 
+			<label for="camplPlace">Where would you prefer to study?</label><br>
+			<div class="container">
+				<label class="radio-inline">
+				  <input type="radio" value="amman" ng-model="userInfo.camp_Location"> Amman
+				</label><br>
+
+				<label class="radio-inline">
+				  <input type="radio" value="mafraq" ng-model="userInfo.camp_Location"> Mafraq
+				</label><br>
+
+				<label class="radio-inline">
+				  <input type="radio" value="either" ng-model="userInfo.camp_Location"> Either Amman Or Mafraq 
+				</label><br>
+			</div>
+			<br>
+
+			<label for="distanc">I can travel to West Amman or Mafraq in less than 40 minutes.</label><br>
+			<div class="container">
+				<label class="radio-inline">
+				  <input type="radio" value="yes" ng-model="userInfo.destance"> Yes
+				</label><br>
+				<label class="radio-inline">
+				  <input type="radio" value="no" ng-model="userInfo.destance"> No
+				</label>
+			</div>
+
+		</div>
+		
+		<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;" ng-click="sendUserInfo()">NEXT</button>
+	</div>
 </div>
