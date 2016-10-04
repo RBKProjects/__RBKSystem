@@ -1,5 +1,6 @@
 var candidateinfo = require('../database/candidateinfoController.js');
 var staff = require('../database/staffController.js');
+var agreement = require('../database/argumentController.js');
 var helpers = require('./helpers.js'); 
 
 module.exports = function (app, express) {
@@ -16,10 +17,20 @@ module.exports = function (app, express) {
 	//============================================================================
 	/* 									staff   								*/
 	//============================================================================
-		app.post('/api/staff/signin',staff.signin);
-		app.post('/api/staff/signup',staff.signup);
-		app.post('/api/staff/updateCandidate',staff.updateCandidate);
-		app.post('/api/staff/updateInfo',staff.updateInfo);
+		app.post('/api/staff/signin', staff.signin);
+		app.post('/api/staff/signup', staff.signup);
+		app.post('/api/staff/updateCandidate', staff.updateCandidate);
+		app.post('/api/staff/updateInfo', staff.updateInfo);
+
+	//============================================================================
+	/* 									agreementqustions						*/
+	//============================================================================
+		app.post('/api/agreement/getQuestion', agreement.getQuestion);
+		app.post('/api/agreement/addQuestion', agreement.addQuestion);
+		app.get('/api/agreement/getAllQuestion', agreement.getAllQuestion);
+		app.post('/api/agreement/insertAnswer', agreement.insertAnswer);
+		app.post('/api/agreement/getAnswer', agreement.getAnswer);
+		app.get('/api/agreement/getAllAnswer', agreement.getAllAnswer);
 
 	//============================================================================
 	/* 								erorr case  								*/
