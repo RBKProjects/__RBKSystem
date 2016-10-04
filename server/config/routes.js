@@ -12,7 +12,7 @@ module.exports = function (app, express) {
 		app.post('/api/candidateinfo/signin',candidateinfo.signin);
 		app.post('/api/candidateinfo/signup',candidateinfo.signup);
 		app.get('/api/candidateinfo/getAllCandidate', candidateinfo.getAllCandidate);
-		app.get('/api/candidateinfo/getCandidate', candidateinfo.getCandidate);
+		app.post('/api/candidateinfo/getCandidate', candidateinfo.getCandidate);
 		
 	//============================================================================
 	/* 									staff   								*/
@@ -27,10 +27,10 @@ module.exports = function (app, express) {
 	//============================================================================
 		app.post('/api/agreement/getQuestion', agreement.getQuestion);
 		app.post('/api/agreement/addQuestion', agreement.addQuestion);
-		app.post('/api/agreement/getAllQuestion', agreement.getAllQuestion);
+		app.get('/api/agreement/getAllQuestion', agreement.getAllQuestion);
 		app.post('/api/agreement/insertAnswer', agreement.insertAnswer);
 		app.post('/api/agreement/getAnswer', agreement.getAnswer);
-		app.post('/api/agreement/getAllAnswer', agreement.getAllAnswer);
+		app.get('/api/agreement/getAllAnswer', agreement.getAllAnswer);
 
 	//============================================================================
 	/* 								erorr case  								*/
