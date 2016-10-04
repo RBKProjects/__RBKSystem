@@ -1,16 +1,16 @@
 angular.module('Admission.auth',[])
-.controller('AuthController',function($scope,$window,$location,auth){
+.controller('AuthController',function($scope,$window,$location,Auth){
 	$scope.userin={};
 	$scope.userup={};
 	$scope.signup=function(){
-		auth.signup($scope.userup)
+		Auth.signup($scope.userup)
 		.then(function(data){
 			console.log('you signed up');
 		})
 	};
 
 	$scope.signin=function(){
-		auth.signin($scope.userin)
+		Auth.signin($scope.userin)
 		.then(function(data){
 			console.log('you signed in',data.user);
 			$window.localStorage.setItem('com.admission',data.token);

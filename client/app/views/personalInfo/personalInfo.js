@@ -1,8 +1,8 @@
 angular.module('Admission.personal',[])
-.controller('PersonalController',function($scope,$window,$location,personalInfo){
+.controller('PersonalController',function($scope,$window,$location,PersonalInfo){
 	$scope.userInfo={};
 	$scope.sendUserInfo=function(){
-		personalInfo.setUserInfo($scope.userInfo)
+		PersonalInfo.setUserInfo($scope.userInfo)
 		.then(function(resp){
 			console.log('info sent');
 		})
@@ -11,7 +11,7 @@ angular.module('Admission.personal',[])
 	$scope.getUserInfo=function(){	
 		var userId=$window.localStorage.getItem('user');
 		console.log('here',userId);
-		personalInfo.getUserInfo(userId)
+		PersonalInfo.getUserInfo(userId)
 		.then(function(data){
 			$scope.userInfo=data.rows;
 		})
