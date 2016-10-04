@@ -1,0 +1,11 @@
+angular.module('Admission.videoIntro',[])
+.controller('VideoController',function($scope,$window,$location,videoIntro){
+	$scope.videoLink={};
+	$scope.sendVideoLink=function(){
+		$scope.videoLink.id=$window.localStoarge.getItem('user');
+		videoIntro.sendVideoLink($scope.videoLink)
+		.then(function(resp){
+			console.log(resp);
+		})
+	}
+})

@@ -84,7 +84,28 @@ angular.module('Admission.servics',[])
 		})
 	}
 
-	return({
+	return ({
 		sendAgreement: sendAgreement
+	})
+})
+
+//===================================================================
+/*				  candidate PersonalInfo factory 	     		   */
+//===================================================================
+
+.factory('VideoIntro',function($http){
+	var sendVideoLink=function(url){
+		return $http({
+			method:'POST',
+			url: '',
+			data: url
+		})
+		.then(function(resp){
+			return resp.data;
+		})
+	}
+
+	return ({
+		sendVideoLink :sendVideoLink
 	})
 })
