@@ -23,7 +23,7 @@ module.exports = function (app, express) {
 		app.post('/api/staff/updateInfo', staff.updateInfo);
 
 	//============================================================================
-	/* 									agreementqustions						*/
+	/* 								agreementqustions							*/
 	//============================================================================
 		app.post('/api/agreement/getQuestion', agreement.getQuestion);
 		app.post('/api/agreement/addQuestion', agreement.addQuestion);
