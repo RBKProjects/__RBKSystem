@@ -2,7 +2,7 @@ angular.module('Admission',[
   'Admission.auth',
   'Admission.personal',
   'Admission.agreement',
-  'Admission.videoIntro',
+  'Admission.testResults',
   'Admission.servics',
   'ngRoute'
 ])
@@ -25,8 +25,12 @@ angular.module('Admission',[
     controller: 'AgreenmentController'
   })
   .when('/videoIntro',{
-    templateUrl: 'app/views/videoIntro/videoIntro.html',
-    controller: 'VideoController'
+    templateUrl: 'app/views/testsResults/videoIntro.html',
+    controller: 'TestsController'
+  })
+  .when('/psychologicalTest',{
+    templateUrl: 'app/views/testsResults/psychologicalTest.html',
+    controller: 'TestsController'
   })
   
 	$httpProvider.interceptors.push('AttachTokens');

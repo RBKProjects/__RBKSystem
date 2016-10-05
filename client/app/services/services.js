@@ -13,7 +13,7 @@ angular.module('Admission.servics',[])
 		})
 		.then(function(resp){
 			return resp.data;
-		})
+		});
 	};
 
 	var signup=function(data){
@@ -24,7 +24,7 @@ angular.module('Admission.servics',[])
 		})
 		.then(function(resp){
 			return resp.data;
-		})
+		});
 	};
 
 	return({
@@ -47,7 +47,7 @@ angular.module('Admission.servics',[])
 		.then(function(resp){
 			console.log('respppp')
 			return resp;
-		})
+		});
 	};
 
 	var getUserInfo=function(id){
@@ -59,17 +59,17 @@ angular.module('Admission.servics',[])
 		})
 		.then(function(resp){
 			return resp.data;
-		})
+		});
 	};
 
 	return ({
 		setUserInfo: setUserInfo,
 		getUserInfo: getUserInfo
-	});
+	})
 })
 
 //===================================================================
-/*				  candidate PersonalInfo factory 	     		   */
+/*				  Agreement factory 	     		   */
 //===================================================================
 
 .factory('Agreement',function($http){
@@ -81,8 +81,8 @@ angular.module('Admission.servics',[])
 		})
 		.then(function(resp){
 			return resp.data;
-		})
-	}
+		});
+	};
 
 	return ({
 		sendAgreement: sendAgreement
@@ -90,22 +90,46 @@ angular.module('Admission.servics',[])
 })
 
 //===================================================================
-/*				  candidate PersonalInfo factory 	     		   */
+/*				  Tests factory 	     		   */
 //===================================================================
 
-.factory('VideoIntro',function($http){
+.factory('TestsResults',function($http){
 	var sendVideoLink=function(url){
 		return $http({
-			method:'POST',
+			method: 'POST',
 			url: '',
 			data: url
 		})
 		.then(function(resp){
 			return resp.data;
-		})
-	}
+		});
+	};
 
-	return ({
-		sendVideoLink :sendVideoLink
+	var sendPsychologicalTest=function(result){
+		return $http({
+			method: 'POST',
+			url: '',
+			data: results
+		})
+		.then(function(resp){
+			return resp;
+		});
+	};
+
+	var sendMindSetEmail=function(email){
+		return $http({
+			method: 'POST',
+			url: '',
+			data: email
+		})
+		.then(function(resp){
+			return resp;
+		});
+	};
+
+	return({
+		sendVideoLink : sendVideoLink,
+		sendPsychologicalTest : sendPsychologicalTest
+		sendMindSetEmail : sendMindSetEmail
 	})
 })
