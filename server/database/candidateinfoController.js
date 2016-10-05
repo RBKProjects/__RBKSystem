@@ -75,8 +75,8 @@ module.exports = {
 		    camp_Location: candidate.camp_Location,
 		    videoLink: candidate.videoLink
 		}
-		connection.query('UPDATE candidateinfo SET ? WHERE id = ?', [post, 1])
-		console.log('after')
+		connection.query('UPDATE candidateinfo SET ? WHERE id = ?', [post, candidate.id])
+		
 
 	},
 

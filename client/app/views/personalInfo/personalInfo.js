@@ -5,6 +5,8 @@ angular.module('Admission.personal',[])
 		PersonalInfo.setUserInfo($scope.userInfo)
 		.then(function(resp){
 			console.log('info sent');
+			$location.path('/agreement')
+			
 		})
 	};
 
