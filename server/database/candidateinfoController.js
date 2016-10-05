@@ -78,6 +78,7 @@ module.exports = {
 		res.json('info Updated');
 	},
 
+
 	videoLink : function (req, res) {
 		var post = {
 			videoLink : req.body.videoLink
