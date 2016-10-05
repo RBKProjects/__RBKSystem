@@ -12,7 +12,7 @@ angular.module('Admission.servics',[])
 			data:data
 		})
 		.then(function(resp){
-			return resp;
+			return resp.data;
 		})
 	};
 
@@ -23,7 +23,7 @@ angular.module('Admission.servics',[])
 			data:data
 		})
 		.then(function(resp){
-			return resp;
+			return resp.data;
 		})
 	};
 
@@ -38,17 +38,74 @@ angular.module('Admission.servics',[])
 //===================================================================
 .factory('PersonalInfo',function($http){
 	var setUserInfo=function(data){
+		console.log('thereeeee')
 		return $http({
-			mehtod:'POST',
+			method:'POST',
 			url:'/api/candidateinfo/updateCandidate',
 			data:data
 		})
 		.then(function(resp){
+			console.log('respppp')
 			return resp;
 		})
 	};
 
+	var getUserInfo=function(id){
+		console.log('there')
+		return $http({
+			method:'POST',
+			url:'/api/candidateinfo/getCandidate',
+			data: {id:id}
+		})
+		.then(function(resp){
+			return resp.data;
+		})
+	};
+
 	return ({
-		userInfo: userInfo
+		setUserInfo: setUserInfo,
+		getUserInfo: getUserInfo
 	});
-});
+})
+
+//===================================================================
+/*				  candidate PersonalInfo factory 	     		   */
+//===================================================================
+
+.factory('Agreement',function($http){
+	var sendAgreement=function(userId){
+		return $http({
+			method:'GET',
+			url:'',
+			data: userId
+		})
+		.then(function(resp){
+			return resp.data;
+		})
+	}
+
+	return ({
+		sendAgreement: sendAgreement
+	})
+})
+
+//===================================================================
+/*				  candidate PersonalInfo factory 	     		   */
+//===================================================================
+
+.factory('VideoIntro',function($http){
+	var sendVideoLink=function(url){
+		return $http({
+			method:'POST',
+			url: '',
+			data: url
+		})
+		.then(function(resp){
+			return resp.data;
+		})
+	}
+
+	return ({
+		sendVideoLink :sendVideoLink
+	})
+})

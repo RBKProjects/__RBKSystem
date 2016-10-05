@@ -1,35 +1,28 @@
-<!-- <div>
-	<form ng-submit="signin()">
-		<input type="text" placeholder="Please Enter Your Email Address" ng-model="user.email">Email<br>
-		<input type="password" placeholder="Please Enter Your Password" ng-model="user.password">Password<br>
-		<button>Submit</button>
-	</form>
-</div> -->
 <div class="container">
-<div class="row">
 	<div class="col-sm-6">
 		<div class="jumbotron">
 		<h2 style="text-align: center; color: #cc0099">Login</h2>
 			<div class="form-group">
-			  <input type="text" class="form-control" placeholder="Email Address">
+			  <input type="text" class="form-control" placeholder="Email Address" ng-model="userin.email">
 			   <br>
-			  <input type="password" class="form-control" placeholder="Password">
+			  <input type="password" class="form-control" placeholder="Password" ng-model="userin.password">
 			</div>
 		<br>
-			<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;">submit</button>
+			<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;" ng-click="signin()">SUBMIT</button>
 		</div>
 	</div>
 	<div class="col-sm-6">
 		<div class="jumbotron">
 		<h2 style="text-align: center; color: #cc0099">SignUp</h2>
 			<div class="form-group">
-			  <input type="text" class="form-control" placeholder="Email Address">
+			  <input type="text" class="form-control" placeholder="User Full Name" ng-model="userup.name">
+			  <br>
+			  <input type="text" class="form-control" placeholder="Email Address" ng-model="userup.email">
 			   <br>
-			  <input type="password" class="form-control" placeholder="Password">
+			  <input type="password" class="form-control" placeholder="Password" ng-model="userup.password">
 			</div>
 		<br>
-			<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;">submit</button>
+			<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;" ng-click="signup()">SUBMIT</button>
 		</div>
 	</div>
-</div>
 </div>

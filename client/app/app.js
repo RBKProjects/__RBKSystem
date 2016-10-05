@@ -1,6 +1,8 @@
 angular.module('Admission',[
   'Admission.auth',
-  'Admission.Personal',
+  'Admission.personal',
+  'Admission.agreement',
+  'Admission.videoIntro',
   'Admission.servics',
   'ngRoute'
 ])
@@ -14,14 +16,19 @@ angular.module('Admission',[
 		templateUrl: 'app/views/auth/signin.html',
 		controller: 'AuthController'
 	})
-  .when('/signup',{
-    templateUrl:'app/views/auth/signup.html',
-    controller: 'AuthController'
-  })
   .when('/personalInfo',{
     templateUrl: 'app/views/personalInfo/personalInfo.html',
     controller: 'PersonalController'
   })
+  .when('/agreement',{
+    templateUrl: 'app/views/rbkAgreement/rbkAgreement.html',
+    controller: 'AgreenmentController'
+  })
+  .when('/videoIntro',{
+    templateUrl: 'app/views/videoIntro/videoIntro.html',
+    controller: 'VideoController'
+  })
+  
 	$httpProvider.interceptors.push('AttachTokens');
 })
 .factory('AttachTokens',function($window){

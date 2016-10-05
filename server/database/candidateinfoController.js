@@ -60,6 +60,7 @@ module.exports = {
 	},
 
 	updateCandidate : function (req, res) {
+		console.log('before')
 		var candidate = req.body;
 		var post  = {
 		    name: candidate.name,
@@ -75,6 +76,8 @@ module.exports = {
 		    videoLink: candidate.videoLink
 		}
 		connection.query('UPDATE candidateinfo SET ? WHERE id = ?', [post, 1])
+		console.log('after')
+
 	},
 
 	getCandidate : function (req, res) {
@@ -82,7 +85,7 @@ module.exports = {
 		connection.query(sql, function(err, rows, fields) {
 		  if (err) throw err;
 		  console.log('The solution is: ', rows);
-		  res.json({rows : rows});
+		  res.json({rows : rows[0]});
 		});
 	},
 
