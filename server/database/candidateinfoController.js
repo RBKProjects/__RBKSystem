@@ -73,11 +73,18 @@ module.exports = {
 		    residence: candidate.residence,
 		    destance: candidate.destance,
 		    camp_Location: candidate.camp_Location,
-		    videoLink: candidate.videoLink
 		}
 		connection.query('UPDATE candidateinfo SET ? WHERE id = ?', [post, candidate.id])
-		
+		res.json('info Updated');
+	},
 
+
+	videoLink : function (req, res) {
+		var post = {
+			videoLink : req.body.videoLink
+		}
+		connection.query('UPDATE candidateinfo SET ? WHERE id = ?', [post, req.body.id]);
+		res.json('videoLink Updated');	
 	},
 
 	getCandidate : function (req, res) {
