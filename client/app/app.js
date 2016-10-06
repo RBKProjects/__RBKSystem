@@ -32,6 +32,18 @@ angular.module('Admission',[
     templateUrl: 'app/views/testsResults/psychologicalTest.html',
     controller: 'TestsController'
   })
+  .when('/mindSetTest',{
+    templateUrl: 'app/views/testsResults/mindsetTest.html',
+    controller: 'TestsController'
+  })
+  .when('/analyticTest',{
+    templateUrl: 'app/views/testsResults/analyticTest.html',
+    controller: 'TestsController'
+  })
+  .when('/congrats', {
+    templateUrl: 'app/views/testsResults/congrats.html',
+    controller: 'TestsController'
+  })
   
 	$httpProvider.interceptors.push('AttachTokens');
 })

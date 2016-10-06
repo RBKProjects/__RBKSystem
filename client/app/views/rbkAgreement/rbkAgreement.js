@@ -6,7 +6,7 @@ $scope.sendAgreement=function(){
 	console.log(userId, $scope.agreement)
 	// Agreement.sendAgreement(userId)
 	// .then(function(){
-	// 	$location.path('/')
+	// 	$location.path('/videoIntro')
 	// })
 }
 })

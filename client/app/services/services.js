@@ -38,14 +38,24 @@ angular.module('Admission.servics',[])
 //===================================================================
 .factory('PersonalInfo',function($http){
 	var setUserInfo=function(data){
-		console.log('thereeeee')
 		return $http({
 			method:'POST',
 			url:'/api/candidateinfo/updateCandidate',
 			data:data
 		})
 		.then(function(resp){
-			console.log('respppp')
+			return resp;
+		});
+	}
+		
+	var sendCodeExp=function(data){
+		console.log(data)
+		return $http({
+			method: 'POST',
+			url: '/api/usertest/insertCodeExp',
+			data: data
+		})
+		.then(function(resp){
 			return resp;
 		});
 	};
@@ -63,8 +73,9 @@ angular.module('Admission.servics',[])
 	};
 
 	return ({
-		setUserInfo: setUserInfo,
-		getUserInfo: getUserInfo
+		setUserInfo : setUserInfo,
+		getUserInfo : getUserInfo,
+		sendCodeExp : sendCodeExp
 	})
 })
 
@@ -97,7 +108,7 @@ angular.module('Admission.servics',[])
 	var sendVideoLink=function(url){
 		return $http({
 			method: 'POST',
-			url: '',
+			url: '/api/candidateinfo/videoLink',
 			data: url
 		})
 		.then(function(resp){
@@ -108,7 +119,7 @@ angular.module('Admission.servics',[])
 	var sendPsychologicalTest=function(result){
 		return $http({
 			method: 'POST',
-			url: '',
+			url: '/api/usertest/insertPersonality',
 			data: results
 		})
 		.then(function(resp){
@@ -119,7 +130,7 @@ angular.module('Admission.servics',[])
 	var sendMindSetEmail=function(email){
 		return $http({
 			method: 'POST',
-			url: '',
+			url: '/api/usertest/insertMindSet',
 			data: email
 		})
 		.then(function(resp){
@@ -127,9 +138,34 @@ angular.module('Admission.servics',[])
 		});
 	};
 
+	var sendAnalyticEmail=function(email){
+		return $http({
+			method: 'POST',
+			url: '/api/usertest/insertAnalitical',
+			data: email
+		})
+		.then(function(resp){
+			return resp;
+		})
+
+	}
+
+	var sendCodeSyntax=function(data){
+		return $http({
+			method: 'POST',
+			url:'/api/usertest/insertCodeSyntax',
+			data: data
+		})
+		.then(function(resp){
+			return resp;
+		})
+	}
+
 	return({
 		sendVideoLink : sendVideoLink,
-		sendPsychologicalTest : sendPsychologicalTest
-		sendMindSetEmail : sendMindSetEmail
+		sendPsychologicalTest : sendPsychologicalTest,
+		sendMindSetEmail : sendMindSetEmail,
+		sendAnalyticEmail : sendAnalyticEmail,
+		sendCodeSyntax : sendCodeSyntax
 	})
 })

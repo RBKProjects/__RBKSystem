@@ -5,8 +5,11 @@ angular.module('Admission.personal',[])
 		PersonalInfo.setUserInfo($scope.userInfo)
 		.then(function(resp){
 			console.log('info sent');
+		})
+		PersonalInfo.sendCodeExp({ id : $scope.userInfo.id, codeExp: $scope.userInfo.codeExp})
+		.then(function(resp){
+			console.log(resp);
 			$location.path('/agreement')
-			
 		})
 	};
 
