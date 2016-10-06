@@ -15,6 +15,7 @@ module.exports = function (app, express) {
 		app.get('/api/candidateinfo/getAllCandidate', candidateinfo.getAllCandidate);
 		app.post('/api/candidateinfo/getCandidate', candidateinfo.getCandidate);
 		app.post('/api/candidateinfo/videoLink',candidateinfo.videoLink);
+	
 	//============================================================================
 	/* 									staff   								*/
 	//============================================================================
