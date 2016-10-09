@@ -47,7 +47,6 @@ module.exports = {
 							throw err;
 						} else{
 							res.json({rows : rows});
-					    	console.log(rows.insertId);
 						}
 					})
 			    }
@@ -60,7 +59,6 @@ module.exports = {
 	},
 
 	updateCandidate : function (req, res) {
-		console.log('before')
 		var candidate = req.body;
 		var post  = {
 		    name: candidate.name,
@@ -90,31 +88,34 @@ module.exports = {
 	getCandidate : function (req, res) {
 		var sql    = 'SELECT * FROM candidateinfo WHERE id = ' + connection.escape(req.body.id);
 		connection.query(sql, function(err, rows, fields) {
-		  if (err) throw err;
-		  console.log('The solution is: ', rows);
-		  res.json({rows : rows[0]});
+			if (err){
+				throw err;	
+			} else{
+				res.json({rows : rows[0]});
+			}
 		});
 	},
 
 	getAllCandidate : function (req, res) {
 		var sql = 'SELECT * FROM candidateinfo';
 		connection.query(sql, function(err, rows, fields) {
-		  if (!err){
-		  	console.log('The solution is: ', rows);
-		  	res.json({rows : rows});
-		  }else{
-			throw err;
-		  }
+			if (!err){
+				res.json({rows : rows});
+			}else{
+				throw err;
+			}
 		});
 	},
 
 	deletCandidate : function (req, res) {
 		var sql = 'DELETE FROM candidateinfo WHERE email = ' + req.body.email;
 		connection.query(sql, function (err, result) {
-		  if (err) throw err;
-
-		  console.log('deleted ' + result.affectedRows + ' rows');
-		})
+			if (err){
+				throw err;
+			} else{
+				res.json({result : result});
+			}
+		});
 	}
 
 }
