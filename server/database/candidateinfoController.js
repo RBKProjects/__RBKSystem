@@ -9,7 +9,7 @@ module.exports = {
 	signin : function (req, res) {
 		var email = req.body.email;
 		var password = req.body.password;
-		var sql    = 'SELECT * FROM candidateinfo WHERE email = ' + connection.escape(req.body.email);
+		var sql    = 'SELECT email,password FROM candidateinfo WHERE email = ' + connection.escape(req.body.email);
 		connection.query(sql, function(err, rows, fields) {
 		  if (err){
 		  	throw err;	
