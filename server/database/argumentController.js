@@ -10,21 +10,22 @@ module.exports = {
 	getQuestion : function (req, res) {
 		var sql    = 'SELECT * FROM agreementqustions WHERE id = ' + connection.escape(req.body.id);
 		connection.query(sql, function(err, rows, fields) {
-		  if (err) throw err;
-		  console.log('The solution is: ', rows);
-		  res.json({rows : rows});
+			if (err){
+				throw err;
+			} else{
+				res.json({rows : rows});
+			}
 		});
 	},
 
 	getAllQuestion : function (req, res) {
 		var sql = 'SELECT * FROM agreementqustions';
 		connection.query(sql, function(err, rows, fields) {
-		  if (!err){
-		  	console.log('The solution is: ', rows);
-		  	res.json({rows : rows});
-		  }else{
-			throw err;
-		  }
+			if (!err){
+				res.json({rows : rows});
+			}else{
+				throw err;
+			}
 		});
 	},
 
@@ -39,9 +40,19 @@ module.exports = {
 				throw err;
 			} else{
 				res.json({rows : rows});
-		    	console.log(rows.insertId);
 			}
-		})
+		});
+	},
+
+	deletQuestion : function (req, res) {
+		var sql = 'DELETE FROM agreementqustions WHERE email = ' + req.body.email;
+		connection.query(sql, function (err, result) {
+			if (err){
+				throw err;  	
+			}else{
+				res.json({rows : rows});
+			} 
+		});
 	},
 
 	insertAnswer : function (req, res) {
@@ -62,7 +73,6 @@ module.exports = {
 							throw err;
 						} else{
 							res.json({rows : rows});
-					    	console.log(rows.insertId);
 						}
 					})
 			    }
@@ -76,21 +86,22 @@ module.exports = {
 	getAnswer : function (req, res) {
 		var sql    = 'SELECT * FROM agreementanswer WHERE id = ' + connection.escape(req.body.id);
 		connection.query(sql, function(err, rows, fields) {
-		  if (err) throw err;
-		  console.log('The solution is: ', rows);
-		  res.json({rows : rows});
+			if (err){
+				throw err;	
+			} else{
+				res.json({rows : rows});
+			}
 		});
 	},
 
 	getAllAnswer : function (req, res) {
 		var sql = 'SELECT * FROM agreementanswer';
 		connection.query(sql, function(err, rows, fields) {
-		  if (!err){
-		  	console.log('The solution is: ', rows);
-		  	res.json({rows : rows});
-		  }else{
-			throw err;
-		  }
+			if (!err){
+				res.json({rows : rows});
+			}else{
+				throw err;
+			}
 		});
 	}
 }

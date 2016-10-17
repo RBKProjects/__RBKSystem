@@ -2,6 +2,10 @@
 background: red;
 }
 
+/*body {
+	background-image: url("http://www.simpalm.com/wp-content/uploads/2016/06/frameworks.png");
+}*/
+
 /*.jumbotron{
 	margin:auto;
 	height: 350px;
@@ -16,3 +20,13 @@ background: red;
 label{
 	font-size: 18px;
 }
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+		background-color: #6d0949;
+		color: #fff;
+}
+
+.nav a {
+	color: #6d0949;
+}
+

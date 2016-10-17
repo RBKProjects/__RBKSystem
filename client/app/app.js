@@ -9,13 +9,10 @@ angular.module('Admission',[
 .config(function($routeProvider, $httpProvider){
 	$routeProvider
   .when('/',{
-    templateUrl:'app/views/auth/signin.html',
+    templateUrl:'app/views/auth/auth.html',
     controller:'AuthController'
   })
-	.when('/signin',{
-		templateUrl: 'app/views/auth/signin.html',
-		controller: 'AuthController'
-	})
+	
   .when('/personalInfo',{
     templateUrl: 'app/views/personalInfo/personalInfo.html',
     controller: 'PersonalController'
@@ -48,6 +45,8 @@ angular.module('Admission',[
     templateUrl: 'app/views/testsResults/congrats.html',
     controller: 'TestsController'
   })
+
+  .otherwise('/')
   
 	$httpProvider.interceptors.push('AttachTokens');
 })

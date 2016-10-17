@@ -25,7 +25,7 @@ var insertToUsertest = function (userId, insertedData, key, res) {
 					} else{
 						res.json({rows : rows});
 					}
-				})
+				});
 		    }
 	  }else{
 	  	throw err
@@ -39,7 +39,6 @@ module.exports = {
 		var sql = 'SELECT * FROM usertest';
 		connection.query(sql, function(err, rows, fields) {
 		  if (!err){
-		  	console.log('The solution is: ', rows);
 		  	res.json({rows : rows});
 		  }else{
 			throw err;
@@ -50,9 +49,11 @@ module.exports = {
 	getUserTests : function (req, res) {
 		var sql    = 'SELECT * FROM usertest WHERE id = ' + connection.escape(req.body.id);
 		connection.query(sql, function(err, rows, fields) {
-		  if (err) throw err;
-		  console.log('The solution is: ', rows);
-		  res.json({rows : rows});
+			if (err){
+				throw err;	
+			} else{
+				res.json({rows : rows});
+			}
 		});
 	},
 
