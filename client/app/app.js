@@ -40,6 +40,10 @@ angular.module('Admission',[
     templateUrl: 'app/views/testsResults/analyticTest.html',
     controller: 'TestsController'
   })
+  .when('/codingTest',{
+    templateUrl: 'app/views/testsResults/codingTest.html',
+    controller: 'TestsController'
+  })
   .when('/congrats', {
     templateUrl: 'app/views/testsResults/congrats.html',
     controller: 'TestsController'

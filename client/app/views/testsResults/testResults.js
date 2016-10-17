@@ -5,7 +5,7 @@ angular.module('Admission.testResults',[])
 	$scope.mindSetTest={};
 	$scope.analyticTest={};
 	$scope.codingTest={};
-	$scope.userId=$window.localStoarge.getItem('user');
+	$scope.userId=$window.localStorage.getItem('user');;
 
 	$scope.sendVideoLink=function(){
 		$scope.videoLink.id=userId;
@@ -53,6 +53,6 @@ angular.module('Admission.testResults',[])
 	}
 
 	$scope.goHome=function(){
-		$location.path('/')
+		//$location.path('/')
 	}
 })
