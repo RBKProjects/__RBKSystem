@@ -116,6 +116,28 @@ module.exports = {
 				res.json({result : result});
 			}
 		});
+	},
+
+	getTotalGraduated : function (req, res) {
+		var sql = 'SELECT count(email) FROM candidateinfo WHERE = "graduated"';
+		connection.query(sql, function (err, result) {
+			if(err){
+				throw err;
+			}else{
+				res.json({result : result});
+			}
+		})
+	},
+
+	getTotalCandidates : function (req, res) {
+		var sql = 'SELECT count(email) FROM  candidateinfo ';
+		connection.query(sql, function (err, result) {
+			if(err){
+				throw err;
+			}else{
+				res.json({result : result})
+			}
+		})
 	}
 
 }
