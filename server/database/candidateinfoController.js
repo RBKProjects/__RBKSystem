@@ -67,7 +67,7 @@ module.exports = {
 		    phone: candidate.phone,
 		    gender: candidate.gender,
 		    dateOfBirth: candidate.dateOfBirth,
-		    nattionalaty: candidate.nattionalaty,
+		    nationality: candidate.nationality,
 		    residence: candidate.residence,
 		    destance: candidate.destance,
 		    camp_Location: candidate.camp_Location,
@@ -118,26 +118,51 @@ module.exports = {
 		});
 	},
 
-	getTotalGraduated : function (req, res) {
-		var sql = 'SELECT count(email) FROM candidateinfo WHERE = "graduated"';
+	getTotalUserOfType : function (req, res) {
+		var user_type = req.body.user_type;
+		var sql = 'SELECT count(email) FROM candidateinfo WHERE user_type =' + connection.escape(user_type);
 		connection.query(sql, function (err, result) {
 			if(err){
 				throw err;
 			}else{
 				res.json({result : result});
 			}
-		})
+		});
 	},
 
-	getTotalCandidates : function (req, res) {
-		var sql = 'SELECT count(email) FROM  candidateinfo ';
+	getTotalNattionalaty : function (req, res) {
+		var nationality = req.body.nationality;
+		if(nationality.toLowerCase() === "jordanian"){
+			var sql = 'SELECT count(email) FROM candidateinfo WHERE nationality =' + connection.escape(nationality);
+			connection.query(sql, function (err, result) {
+				if(err){
+					throw err;
+				}else{
+					res.json({result : result});
+				}
+			});
+		}else{
+			var sql_refugees = 'SELECT count(email) FROM candidateinfo WHERE isRefugee = true'
+			connection.query(sql_refugees, function (err, result) {
+				if (err) {
+					throw err;
+				}else{
+					res.json({result : result})
+				}
+			})
+		} 
+	},
+
+	getTotalGender : function () {
+		var gender = req.escape(gender);
+		var sql = 'SELECT count(gender) FROM candidateinfo WHERE'+ connection.escape(gender);
 		connection.query(sql, function (err, result) {
 			if(err){
 				throw err;
 			}else{
-				res.json({result : result})
+				res.json({ result : result })
 			}
-		})
+		});
 	}
 
 }
