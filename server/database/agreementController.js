@@ -84,7 +84,7 @@ module.exports = {
 	},
 
 	getAnswer : function (req, res) {
-		var sql    = 'SELECT * FROM agreementanswer WHERE id = ' + connection.escape(req.body.id);
+		var sql    = 'SELECT * FROM agreementanswer WHERE id =' + connection.escape(req.body.id);
 		connection.query(sql, function(err, rows, fields) {
 			if (err){
 				throw err;	
@@ -101,6 +101,28 @@ module.exports = {
 				res.json({rows : rows});
 			}else{
 				throw err;
+			}
+		});
+	},
+
+	getQuestionOptions : function (req, res) {
+		var sql = 'SELECT * FROM qustion_option WHERE Q_id =' + connection.escape(req.body.q_id);
+		connection.query(sql, function (err, rows) {
+			if(err){
+				throw err;
+			}else{
+				res.json({rows : rows});
+			}
+		});
+	},
+
+	getAllQuestionsOptions : function (req, res) {
+		var sql = 'SELECT * FROM qustion_option ';
+		connection.query(sql, function (err, rows) {
+			if(err){
+				throw err;
+			}else{
+				res.json({rows : rows});
 			}
 		});
 	}
