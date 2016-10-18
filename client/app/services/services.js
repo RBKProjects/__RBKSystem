@@ -84,10 +84,10 @@ angular.module('Admission.servics',[])
 //===================================================================
 
 .factory('Agreement',function($http){
-	var sendAgreement=function(userId){
+	var sendAnswers=function(userId){
 		return $http({
 			method:'GET',
-			url:'',
+			url:'/api/agreement/insertAnswer',
 			data: userId
 		})
 		.then(function(resp){
@@ -95,8 +95,19 @@ angular.module('Admission.servics',[])
 		});
 	};
 
+	var getAllQuestions=function(){
+		return $http({
+			method: 'GET',
+			url: '/api/agreement/getAllQuestion'
+		})
+		.then(function(resp){
+			return resp.data;
+		});
+	};
+	
 	return ({
-		sendAgreement: sendAgreement
+		sendAnswers: sendAnswers,
+		getAllQuestions : getAllQuestions
 	})
 })
 

@@ -1,7 +1,7 @@
 <div class="container">
 <div class="col-sm-2"></div>
 	<div class="jumbotron col-sm-8">
-		<h2 style="text-align: center; color: #cc0099">RBK Commitment Agreement اتفاقية الالتزام بقواعد البرنامج</h2>
+		<!-- <h2 style="text-align: center; color: #cc0099">RBK Commitment Agreement اتفاقية الالتزام بقواعد البرنامج</h2>
 		<p>RBK is an intensive, immersive program and requires a substantial investment of your time and resources, as well as the time and resources of RBK staff. As you enter the RBK program, we make a commitment to you that we will provide you with 12 – 16 hours a day of training from experienced instructors, many of whom have volunteered their time and energy to provide you with all the training and support you will need to succeed. Our program is tough, but for those who graduate we are further committed to providing career support to our graduates as they go forward into the labor market. 
 
 		We are making a big commitment to YOU, and in return we expect you make an even greater commitment to YOURSELF.
@@ -125,6 +125,10 @@
 			</div>
 			<br>			
 	</div>
-	<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;" ng-click="sendAgreement()">NEXT</button>
+	<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;" ng-click="sendAgreement()">NEXT</button> -->
+
+	<div ng-repeat="data in questions">
+		<p>{{data.arabicQ}}</p>
+		<label>{{data.englishQ}}</label>
 	</div>
 </div>
