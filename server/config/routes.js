@@ -1,6 +1,6 @@
 var candidateinfo = require('../database/candidateinfoController.js');
 var staff = require('../database/staffController.js');
-var agreement = require('../database/argumentController.js');
+var agreement = require('../database/agreementController.js');
 var usertest = require('../database/usertestController.js');
 var helpers = require('./helpers.js'); 
 
