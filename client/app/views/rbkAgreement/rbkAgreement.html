@@ -126,9 +126,25 @@
 			<br>			
 	</div>
 	<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;" ng-click="sendAgreement()">NEXT</button> -->
+	<h2 style="text-align: center; color: #cc0099">RBK Commitment Agreement اتفاقية الالتزام بقواعد البرنامج</h2>
+			<p>RBK is an intensive, immersive program and requires a substantial investment of your time and resources, as well as the time and resources of RBK staff. As you enter the RBK program, we make a commitment to you that we will provide you with 12 – 16 hours a day of training from experienced instructors, many of whom have volunteered their time and energy to provide you with all the training and support you will need to succeed. Our program is tough, but for those who graduate we are further committed to providing career support to our graduates as they go forward into the labor market. 
 
-	<div ng-repeat="data in questions">
-		<p>{{data.arabicQ}}</p>
-		<label>{{data.englishQ}}</label>
+			We are making a big commitment to YOU, and in return we expect you make an even greater commitment to YOURSELF.
+
+			By joining the RBK program, you are agreeing to commit to the following:</p>
+			<br>
+			<div style="direction: rtl;"><p>
+			برنامج RBK هو برنامج تدريبي مكثف يتطلب استثماراً كبيراً من وقتك وجهدك، كما يتطلب أيضا من وقت ومصادر العاملين لدى RBK. في حال انضمامك للبرنامج يتعين علينا الالتزام بتوفير 12 - 16 ساعة من التدريب المكثف المقدم من معلمين ذوي خبرة، العديد منهم تطوعوا بوقتهم وطاقتهم لتقديم التعليم والتدريب لك ودعمك حتى تحقق النجاح اللازم. برنامجنا صعب، ولكن لأولئك الذين يتخرجون من البرنامج نلتزم بتوفير الدعم المهني مع انخراطكم بسوق العمل. 
+
+			التزامنا تجاهكم كبير، ولذا نرجو منكم التزاماً أكبر لأنفسكم. بانضمامك لبرنامج RBK فأنت توافق على الالتزام بالتالي:</p></div>
+			<br>
+
+		<div ng-repeat="data in questions">
+			<label>{{data.englishQ}}</label>
+			<div style="direction: rtl;">
+			<p>{{data.arabicQ}}</p>
+		</div>
+		</div>
+	<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;" ng-click="sendAgreement()">NEXT</button>
 	</div>
 </div>
