@@ -105,9 +105,20 @@ angular.module('Admission.servics',[])
 		});
 	};
 	
+	var getQuestionOptions=function(questionId){
+		return $http({
+			method: 'POST',
+			url: '/api/agreement/getQuestionOptions',
+			data: questionId
+		})
+		.then(function(resp){
+			return resp;
+		})
+	}
 	return ({
 		sendAnswers: sendAnswers,
-		getAllQuestions : getAllQuestions
+		getAllQuestions : getAllQuestions,
+		getQuestionOptions : getQuestionOptions
 	})
 })
 

@@ -24,7 +24,8 @@
     "jwt-simple": "^0.5.0",
     "mysql": "^2.11.1",
     "nodemon": "^1.10.2",
-    "sequelize": "^3.24.3"
+    "sequelize": "^3.24.3",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "morgan": "^1.7.0"
