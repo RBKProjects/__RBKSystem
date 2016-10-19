@@ -1,20 +1,24 @@
-var candidateinfo = require('../database/candidateinfoController.js');
-var staff = require('../database/staffController.js');
-var agreement = require('../database/agreementController.js');
-var usertest = require('../database/usertestController.js');
+var candidateInfo = require('../controller/candidateInfoController.js');
+var staff = require('../controller/staffController.js');
+var agreement = require('../controller/agreementController.js');
+var userTest = require('../controller/userTestController.js');
 var helpers = require('./helpers.js'); 
 
 module.exports = function (app, express) {
 
 	//============================================================================
-	/* 								candidateinfo  								*/
+	/* 								candidateInfo  								*/
 	//============================================================================
-		app.post('/api/candidateinfo/updateCandidate', candidateinfo.updateCandidate);
-		app.post('/api/candidateinfo/signin',candidateinfo.signin);
-		app.post('/api/candidateinfo/signup',candidateinfo.signup);
-		app.get('/api/candidateinfo/getAllCandidate', candidateinfo.getAllCandidate);
-		app.post('/api/candidateinfo/getCandidate', candidateinfo.getCandidate);
-		app.post('/api/candidateinfo/videoLink',candidateinfo.videoLink);
+		app.post('/api/candidateInfo/updateCandidate', candidateInfo.updateCandidate);
+		app.post('/api/candidateInfo/signin',candidateInfo.signin);
+		app.post('/api/candidateInfo/signup',candidateInfo.signup);
+		app.get('/api/candidateInfo/getAllCandidate', candidateInfo.getAllCandidate);
+		app.post('/api/candidateInfo/getCandidate', candidateInfo.getCandidate);
+		app.post('/api/candidateInfo/videoLink',candidateInfo.videoLink);
+		app.post('/api/candidateInfo/deletCandidate', candidateInfo.deletCandidate); 
+		app.post('/api/candidateInfo/getTotalUserOfType', candidateInfo.getTotalUserOfType); 
+		app.post('/api/candidateInfo/getTotalNattionalaty',candidateInfo.getTotalNattionalaty) 
+		app.post('/api/candidateInfo/getTotalGender', candidateInfo.getTotalGender) 
 	
 	//============================================================================
 	/* 									staff   								*/
@@ -33,17 +37,21 @@ module.exports = function (app, express) {
 		app.post('/api/agreement/insertAnswer', agreement.insertAnswer);
 		app.post('/api/agreement/getAnswer', agreement.getAnswer);
 		app.get('/api/agreement/getAllAnswer', agreement.getAllAnswer);
+		app.post('/api/agreement/deletQuestion', agreement.deletQuestion);
+		app.post('/api/agreement/insertOptions', agreement.insertOptions);
+		app.post('/api/agreement/getQuestionOptions', agreement.getQuestionOptions);
+		app.get('/api/agreement/getAllQuestionsOptions', agreement.getAllQuestionsOptions); 
 
 	//============================================================================
-	/* 								  usertest							        */
+	/* 								  userTest							        */
 	//============================================================================
-		app.get('/api/usertest/getALLUsersTests', usertest.getALLUsersTests);
-		app.post('/api/usertest/getUserTests', usertest.getUserTests);
-		app.post('/api/usertest/insertPersonality', usertest.insertPersonality);
-		app.post('/api/usertest/insertAnalitical', usertest.insertAnalitical);
-		app.post('/api/usertest/insertCodeExp', usertest.insertCodeExp);
-		app.post('/api/usertest/insertCodeSyntax', usertest.insertCodeSyntax);
-		app.post('/api/usertest/insertMindSet', usertest.insertMindSet);
+		app.get('/api/userTest/getALLUsersTests', userTest.getALLUsersTests);
+		app.post('/api/userTest/getUserTests', userTest.getUserTests);
+		app.post('/api/userTest/insertPersonality', userTest.insertPersonality);
+		app.post('/api/userTest/insertAnalitical', userTest.insertAnalitical);
+		app.post('/api/userTest/insertCodeExp', userTest.insertCodeExp);
+		app.post('/api/userTest/insertCodeSyntax', userTest.insertCodeSyntax);
+		app.post('/api/userTest/insertMindSet', userTest.insertMindSet);
 
 	//============================================================================
 	/* 								erorr case  								*/
