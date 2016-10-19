@@ -1,5 +1,5 @@
 var mysql = require('mysql');
-var db = require('./database.js');
+var db = require('../database.js');
 var jwt = require('jwt-simple');
 
 //declare connection 
@@ -84,7 +84,7 @@ module.exports = {
 	},
 
 	getAnswer : function (req, res) {
-		var sql    = 'SELECT * FROM agreementanswer WHERE id = ' + connection.escape(req.body.id);
+		var sql    = 'SELECT * FROM agreementanswer WHERE id =' + connection.escape(req.body.id);
 		connection.query(sql, function(err, rows, fields) {
 			if (err){
 				throw err;	
@@ -101,6 +101,45 @@ module.exports = {
 				res.json({rows : rows});
 			}else{
 				throw err;
+			}
+		});
+	},
+
+	insertOptions : function (req, res) {
+		var get = req.body;
+		var option = {
+			text_a : get.text_a,
+			text_e : get.text_e,
+			Q_id : get.Q_id,
+			num : get.num
+		}		
+		connection.query('INSERT INTO qustion_option SET ?', option, function (err, rows) {
+			if (err){
+				throw err;
+			} else{
+				res.json({rows : rows});
+			}
+		});
+	},
+
+	getQuestionOptions : function (req, res) {
+		var sql = 'SELECT * FROM qustion_option WHERE Q_id =' + connection.escape(req.body.q_id);
+		connection.query(sql, function (err, rows) {
+			if(err){
+				throw err;
+			}else{
+				res.json({rows : rows});
+			}
+		});
+	},
+
+	getAllQuestionsOptions : function (req, res) {
+		var sql = 'SELECT * FROM qustion_option ';
+		connection.query(sql, function (err, rows) {
+			if(err){
+				throw err;
+			}else{
+				res.json({rows : rows});
 			}
 		});
 	}

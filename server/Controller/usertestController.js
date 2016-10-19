@@ -1,5 +1,5 @@
 var mysql = require('mysql');
-var db = require('./database.js');
+var db = require('../database.js');
 var jwt = require('jwt-simple');
 
 //declare connection 
