@@ -131,7 +131,7 @@ angular.module('Admission.servics',[])
 		return $http({
 			method: 'POST',
 			url: '/api/usertest/insertPersonality',
-			data: results
+			data: result
 		})
 		.then(function(resp){
 			return resp;
