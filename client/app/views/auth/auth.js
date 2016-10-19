@@ -1,6 +1,5 @@
 angular.module('Admission.auth',[])
 .controller('AuthController',function($scope,$window,$location,Auth){
-	
 	$scope.tab = 1;
 
     $scope.setTab = function(newTab){
