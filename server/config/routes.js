@@ -38,6 +38,7 @@ module.exports = function (app, express) {
 		app.post('/api/agreement/getAnswer', agreement.getAnswer);
 		app.get('/api/agreement/getAllAnswer', agreement.getAllAnswer);
 		app.post('/api/agreement/deletQuestion', agreement.deletQuestion);
+		app.post('/api/agreement/insertOptions', agreement.insertOptions);
 		app.post('/api/agreement/getQuestionOptions', agreement.getQuestionOptions);
 		app.get('/api/agreement/getAllQuestionsOptions', agreement.getAllQuestionsOptions); 
 
