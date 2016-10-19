@@ -1,4 +1,168 @@
 <div class="container">
+	<div class="row vertical-offset-100">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="panel panel-default">
+				<div class="rbk panel-heading">
+					<h3>Personal Information</h3>
+				</div>
+				<div class="panel-body">
+					<div class="">
+						<form class="form-horizontal" id="contact_form">
+					<fieldset>
+
+					<!-- Text input-->
+
+					<div class="form-group">
+					  <label class="col-md-4 control-label">Full Name</label>  
+					  <div class="col-md-4 inputGroupContainer">
+					  <div class="input-group">
+					  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+					  <input  name="first_name" placeholder="Full Name" ng-model="userInfo.name" class="form-control"  type="text">
+						</div>
+					  </div>
+					</div>
+
+
+					<!-- Text input-->
+						   <div class="form-group">
+					  <label class="col-md-4 control-label">E-Mail</label>  
+						<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+					  <input name="email" placeholder="E-Mail Address" ng-model="userInfo.email" class="form-control"  type="text">
+						</div>
+					  </div>
+					</div>
+
+
+					<!-- Text input-->
+						   
+					<div class="form-group">
+					  <label class="col-md-4 control-label">Phone #</label>  
+						<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+					  <input name="phone" placeholder="(845)555-1212" ng-model="userInfo.phone" class="form-control" type="text">
+						</div>
+					  </div>
+					</div>
+
+					<!-- Text input-->
+						  
+					<div class="form-group">
+					  <label class="col-md-4 control-label">Nationality</label>  
+						<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+					  <input name="address" placeholder="Nationality" ng-model="userInfo.nattionalaty" class="form-control" type="text">
+						</div>
+					  </div>
+					</div>
+
+					<!-- Text input-->
+					 
+					<div class="form-group">
+					  <label class="col-md-4 control-label">City</label>  
+						<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+					  <input  placeholder="Country of Residence" ng-model="userInfo.residence"  type="text" class="form-control">
+						</div>
+					  </div>
+					</div>
+
+					<!-- Text input-->
+
+					<div class="form-group">
+						<label class="col-md-4 control-label">Date of Birth</label>  
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-glyphicon glyphicon-calendar"></i></span>
+								<input name="date" placeholder="Date of Birth" ng-model="userInfo.dateOfBirth" class="form-control"  type="date">
+							</div>
+						</div>
+					</div>
+
+					<!-- radio checks -->
+					<div class="form-group">
+						<label class="col-md-4 control-label">Gender?</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+								<select class="form-control" id="gender">
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+									<option value="other">Other</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-4 control-label">Apply to ...</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
+								<select class="form-control" id="campLocation" ng-model="userInfo.camp_Location">
+									<option value="amman">Amman Class</option>
+									<option value="mafraq">Mafraq Class</option>
+									<option value="either">Either</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-4 control-label">Distance to West Amman or Mafraq</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
+								<select class="form-control" id="distance" ng-model="userInfo.destance">
+									<option value="yes">Less than 40 minutes</option>
+									<option value="no">more than 40 minutes</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-4 control-label">Do you have coding experience?</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></span>
+								<select class="form-control" id="codeExp" ng-model="userInfo.codeExp">
+									<option value="yes">Yes</option>
+									<option value="no">No</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<!-- Button -->
+					<div class="form-group">
+					  <div class="col-md-6 col-md-offset-3">
+						<button type="submit" class="btn btn-lg btn-block rbk" >Send <span class="glyphicon glyphicon-send" ng-click="sendUserInfo()"></span></button>
+					  </div>
+					</div>
+
+					</fieldset>
+					</form>
+					</div>
+						</div><!-- /.container -->
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
 <div class="col-sm-3"></div>
 	<div class="jumbotron col-sm-6">
 		<h2 style="text-align: center; color: #cc0099">Biographic Info المعلومات الشخصية</h2>
@@ -68,4 +232,4 @@
 		
 		<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;" ng-click="sendUserInfo()">NEXT</button>
 	</div>
-</div>
+</div> -->
