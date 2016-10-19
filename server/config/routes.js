@@ -1,7 +1,7 @@
-var candidateinfo = require('../database/candidateinfoController.js');
-var staff = require('../database/staffController.js');
-var agreement = require('../database/agreementController.js');
-var usertest = require('../database/usertestController.js');
+var candidateinfo = require('../controller/candidateinfoController.js');
+var staff = require('../controller/staffController.js');
+var agreement = require('../controller/agreementController.js');
+var usertest = require('../controller/usertestController.js');
 var helpers = require('./helpers.js'); 
 
 module.exports = function (app, express) {
