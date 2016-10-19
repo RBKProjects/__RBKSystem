@@ -12,6 +12,7 @@ admission System
 	```bash
 	npm install
 	```
+
 4) run the server
 	```bash
 	npm start
