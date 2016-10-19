@@ -19,7 +19,7 @@ angular.module('Admission',[
   })
   .when('/agreement',{
     templateUrl: 'app/views/rbkAgreement/rbkAgreement.html',
-    controller: 'AgreenmentController'
+    controller: 'AgreenmentController'  
   })
   .when('/videoIntro',{
     templateUrl: 'app/views/testsResults/videoIntro.html',
@@ -46,6 +46,7 @@ angular.module('Admission',[
   
 	$httpProvider.interceptors.push('AttachTokens');
 })
+
 .factory('AttachTokens',function($window){
 	var attach = {
     request: function (object) {
