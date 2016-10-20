@@ -84,10 +84,10 @@ angular.module('Admission.servics',[])
 //===================================================================
 
 .factory('Agreement',function($http){
-	var sendAgreement=function(userId){
+	var sendAnswers=function(userId){
 		return $http({
 			method:'GET',
-			url:'',
+			url:'/api/agreement/insertAnswer',
 			data: userId
 		})
 		.then(function(resp){
@@ -95,8 +95,30 @@ angular.module('Admission.servics',[])
 		});
 	};
 
+	var getAllQuestions=function(){
+		return $http({
+			method: 'GET',
+			url: '/api/agreement/getAllQuestion'
+		})
+		.then(function(resp){
+			return resp.data;
+		});
+	};
+	
+	var getQuestionOptions=function(questionId){
+		return $http({
+			method: 'POST',
+			url: '/api/agreement/getQuestionOptions',
+			data: questionId
+		})
+		.then(function(resp){
+			return resp;
+		})
+	}
 	return ({
-		sendAgreement: sendAgreement
+		sendAnswers: sendAnswers,
+		getAllQuestions : getAllQuestions,
+		getQuestionOptions : getQuestionOptions
 	})
 })
 
@@ -120,7 +142,7 @@ angular.module('Admission.servics',[])
 		return $http({
 			method: 'POST',
 			url: '/api/usertest/insertPersonality',
-			data: results
+			data: result
 		})
 		.then(function(resp){
 			return resp;

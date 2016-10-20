@@ -5,7 +5,7 @@ function DB() {
 	    user: 'root',
 	    password: '',
 	    host: 'localhost',
-	    port: 3306,
+	    port: 3305,
 	    database: 'rbkadmission'
 	});
 	return connection;
