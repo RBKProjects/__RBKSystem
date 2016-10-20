@@ -143,6 +143,11 @@
 			<label>{{data.englishQ}}</label>
 			<div style="direction: rtl;">
 			<p>{{data.arabicQ}}</p>
+			<p>{{data.Q_id}}</p>
+			<div ng-repeat="options in questionOptions">
+				<!-- <li ng-if="data.id === options.Q_id">{{options}}</li> -->
+				{{options[0]}}
+			</div>
 		</div>
 		</div>
 	<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;" ng-click="sendAgreement()">NEXT</button>
