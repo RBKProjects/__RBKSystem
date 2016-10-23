@@ -9,7 +9,7 @@ module.exports = {
 	signin : function (req, res) {
 		var email = req.body.email;
 		var password = req.body.password;
-		var sql    = 'SELECT email,password FROM candidateinfo WHERE email = ' + connection.escape(req.body.email);
+		var sql    = 'SELECT email,password,id FROM candidateinfo WHERE email = ' + connection.escape(req.body.email);
 		connection.query(sql, function(err, rows, fields) {
 		  if (err){
 		  	throw err;	
@@ -19,6 +19,7 @@ module.exports = {
 					var token = jwt.encode(rows[0], 'secret');
 				    res.setHeader('x-access-token',token);
 				    res.json({token: token, user : rows[0]['id']});
+
 				}else{
 					res.status(500).send('Wrong Password');
 				}		  

@@ -12,7 +12,6 @@ angular.module('Admission',[
     templateUrl:'app/views/auth/auth.html',
     controller:'AuthController'
   })
-	
   .when('/personalInfo',{
     templateUrl: 'app/views/personalInfo/personalInfo.html',
     controller: 'PersonalController'
@@ -37,11 +36,14 @@ angular.module('Admission',[
     templateUrl: 'app/views/testsResults/analyticTest.html',
     controller: 'TestsController'
   })
+  .when('/codingTest',{
+    templateUrl: 'app/views/testsResults/codingTest.html',
+    controller: 'TestsController'
+  })
   .when('/congrats', {
     templateUrl: 'app/views/testsResults/congrats.html',
     controller: 'TestsController'
   })
-
   .otherwise('/')
   
 	$httpProvider.interceptors.push('AttachTokens');
@@ -63,7 +65,7 @@ angular.module('Admission',[
 .run(function ($rootScope, $location, Auth) {
   $rootScope.$on('$routeChangeStart', function (evt, next, current) {
     if (next.$$route && next.$$route.authenticate && !Auth.isAuth()) {
-      //$location.path('/signin');
+      $location.path('/signin');
     }
   });
 });

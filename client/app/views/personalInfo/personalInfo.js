@@ -2,6 +2,7 @@ angular.module('Admission.personal',[])
 .controller('PersonalController',function($scope,$window,$location,PersonalInfo){
 	$scope.userInfo={};
 	$scope.sendUserInfo=function(){
+		console.log($scope.userInfo)
 		PersonalInfo.setUserInfo($scope.userInfo)
 		.then(function(resp){
 			console.log('info sent');
