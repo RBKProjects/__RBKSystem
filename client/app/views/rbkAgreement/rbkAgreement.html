@@ -138,18 +138,16 @@
 
 			التزامنا تجاهكم كبير، ولذا نرجو منكم التزاماً أكبر لأنفسكم. بانضمامك لبرنامج RBK فأنت توافق على الالتزام بالتالي:</p></div>
 			<br>
-
-		<div ng-repeat="data in questions">
-			<label>{{data.englishQ}}</label>
-			<div style="direction: rtl;">
-			<p>{{data.arabicQ}}</p>
-			<p>{{data.Q_id}}</p>
-			<div ng-repeat="options in questionOptions">
-				<!-- <li ng-if="data.id === options.Q_id">{{options}}</li> -->
-				{{options[0]}}
+			<div ng-repeat="quest in questions track by $index">
+				<label>{{quest[1]}}</label>
+				<p style="direction: rtl;">{{quest[2]}}</p>
+				<div >
+					<div class="radio" ng-repeat="o in options[quest[0]]">
+						<input type="radio" ng-value="o[0]" ng-model="agreement[quest[0]]"> {{o[1]}} {{o[2]}} <br>
+					</div>
+				</div>
 			</div>
-		</div>
-		</div>
-	<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;" ng-click="sendAgreement()">NEXT</button>
+			<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;" ng-click="sendAgreement()">NEXT</button>
+	<br>
 	</div>
 </div>
