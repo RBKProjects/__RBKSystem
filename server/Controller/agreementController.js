@@ -124,7 +124,7 @@ module.exports = {
 	},
 
 	getQuestionOptions : function (req, res) {
-		var sql = 'SELECT * FROM qustion_option WHERE Q_id =' + connection.escape(req.body.q_id);
+		var sql = 'SELECT * FROM qustion_option WHERE Q_id =' + connection.escape(req.body.Q_id);
 		connection.query(sql, function (err, rows) {
 			if(err){
 				throw err;

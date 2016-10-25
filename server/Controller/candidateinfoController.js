@@ -154,14 +154,26 @@ module.exports = {
 		} 
 	},
 
-	getTotalGender : function () {
-		var gender = req.escape(gender);
-		var sql = 'SELECT count(gender) FROM candidateinfo WHERE'+ connection.escape(gender);
+	getTotalGender : function (req, res) {
+		var gender = req.body.gender;
+		var sql = 'SELECT count(gender) FROM candidateinfo WHERE gender = '+ connection.escape(gender);
 		connection.query(sql, function (err, result) {
 			if(err){
 				throw err;
 			}else{
-				res.json({ result : result })
+				res.json({ result : result });
+			}
+		});
+	},
+
+	getAllStatus : function (req, res) {
+		var status = req.body.status;
+		var sql = 'SELECT count(status) FROM candidateinfo WHERE status ='+ connection.escape(status);
+		connection.query(sql, function (err, result) {
+			if(err){
+				throw err;
+			}else{
+				res.json({result : result});
 			}
 		});
 	}
