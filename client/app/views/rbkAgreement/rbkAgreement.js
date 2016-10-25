@@ -10,25 +10,26 @@ angular.module('Admission.agreement',[])
 	$scope.sendAgreement=function(){
 		var userId=$window.localStorage.getItem('user');
 		console.log(userId, $scope.agreement);
+		var nb_Q=0;
 		for(var key in $scope.agreement){
+			nb_Q++;
 			var obj={};
 			obj.userinfo_id=userId;
 			obj.agreementqustions_id=key;
 			obj.answer=$scope.agreement[key];
 			Agreement.sendAnswers(obj)
 			.then(function(resp){
-				//$location.path('/videoIntro')
-				console.log('yes')
+				console.log('answer of question '+ nb_Q + " have been sent");
 			})
+		};
+		if(nb_Q !== 9){
+			alert("please answer all the questions");
+		}
+		else{
+			 $location.path('/videoIntro')
 		}
 	};
 
-	// $scope.getQuestion=function(){
-	// 	Agreement.getQuestion()
-	// 	.then(function(resp){
-
-	// 	})
-	// }
 	$scope.getQuestions=function(){
 		Agreement.getAllQuestions()
 		.then(function(resp){

@@ -2,7 +2,7 @@ node_modules/
 client/bower_components/
 *.log
 
-server/database/database.js
+server/database.js
 
 build/
 dist/
