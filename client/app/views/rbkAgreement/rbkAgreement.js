@@ -10,7 +10,7 @@ angular.module('Admission.agreement',[])
 	$scope.sendAgreement=function(){
 		var userId=$window.localStorage.getItem('user');
 		console.log(userId, $scope.agreement);
-		var nb_Q=0;
+		var nb_Q=1;
 		for(var key in $scope.agreement){
 			nb_Q++;
 			var obj={};
@@ -22,7 +22,7 @@ angular.module('Admission.agreement',[])
 				console.log('answer of question '+ nb_Q + " have been sent");
 			})
 		};
-		if(nb_Q !== 9){
+		if(nb_Q !== $scope.questions.length){
 			alert("please answer all the questions");
 		}
 		else{
