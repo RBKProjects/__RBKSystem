@@ -57,6 +57,7 @@ module.exports = {
 
 	insertAnswer : function (req, res) {
 		var candidate = req.body;
+		console.log("my worst ",candidate);
 		var newCandidate = {
 			userinfo_id : candidate.userinfo_id,
 			agreementqustions_id : candidate.agreementqustions_id,

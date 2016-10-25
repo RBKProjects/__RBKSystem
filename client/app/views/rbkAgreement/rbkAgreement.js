@@ -9,22 +9,26 @@ angular.module('Admission.agreement',[])
 
 	$scope.sendAgreement=function(){
 		var userId=$window.localStorage.getItem('user');
-		console.log(userId, $scope.agreement)
-		._map($scope.agreement,function(row){
-			
-		})
-		// Agreement.sendAnswers(userId)
-		// .then(function(){
-			//$location.path('/videoIntro')
-		// })
+		console.log(userId, $scope.agreement);
+		for(var key in $scope.agreement){
+			var obj={};
+			obj.userinfo_id=userId;
+			obj.agreementqustions_id=key;
+			obj.answer=$scope.agreement[key];
+			Agreement.sendAnswers(obj)
+			.then(function(resp){
+				//$location.path('/videoIntro')
+				console.log('yes')
+			})
+		}
 	};
 
-	$scope.getQuestion=function(){
-		Agreement.getQuestion()
-		.then(function(resp){
+	// $scope.getQuestion=function(){
+	// 	Agreement.getQuestion()
+	// 	.then(function(resp){
 
-		})
-	}
+	// 	})
+	// }
 	$scope.getQuestions=function(){
 		Agreement.getAllQuestions()
 		.then(function(resp){
