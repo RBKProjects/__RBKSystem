@@ -84,11 +84,11 @@ angular.module('Admission.servics',[])
 //===================================================================
 
 .factory('Agreement',function($http){
-	var sendAnswers=function(userId){
+	var sendAnswers=function(data){
 		return $http({
-			method:'GET',
+			method:'POST',
 			url:'/api/agreement/insertAnswer',
-			data: userId
+			data: data
 		})
 		.then(function(resp){
 			return resp.data;
