@@ -49,7 +49,6 @@ angular.module('Admission.servics',[])
 	}
 		
 	var sendCodeExp=function(data){
-		console.log(data)
 		return $http({
 			method: 'POST',
 			url: '/api/usertest/insertCodeExp',
@@ -61,7 +60,6 @@ angular.module('Admission.servics',[])
 	};
 
 	var getUserInfo=function(id){
-		console.log('there')
 		return $http({
 			method:'POST',
 			url:'/api/candidateinfo/getCandidate',

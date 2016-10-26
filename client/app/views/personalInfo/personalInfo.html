@@ -54,7 +54,7 @@
 						<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-					  <input name="address" placeholder="Nationality" ng-model="userInfo.nattionalaty" class="form-control" type="text">
+					  <input name="address" placeholder="Nationality" ng-model="userInfo.nationality" class="form-control" type="text">
 						</div>
 					  </div>
 					</div>
@@ -78,7 +78,7 @@
 						<div class="col-md-4 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-glyphicon glyphicon-calendar"></i></span>
-								<input name="date" placeholder="Date of Birth" ng-model="userInfo.dateOfBirth" class="form-control"  type="date">
+								<input name="date" placeholder="Date of Birth" ng-model="userDate.date" class="form-control"  type="date">
 							</div>
 						</div>
 					</div>
@@ -89,9 +89,9 @@
 						<div class="col-md-4 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-								<select class="form-control" id="gender">
+								<select class="form-control" id="gender" ng-model="userInfo.gender">
 									<option value="male">Male</option>
-									<option value="female">Female</option>
+									<option value="female" >Female</option>
 									<option value="other">Other</option>
 								</select>
 							</div>
@@ -102,7 +102,7 @@
 						<div class="col-md-4 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
-								<select class="form-control" id="campLocation" ng-model="userInfo.camp_Location">
+								<select class="form-control" id="campLocation" ng-model="userInfo.camp_Location" ng-model="userInfo.camp_Location">
 									<option value="amman">Amman Class</option>
 									<option value="mafraq">Mafraq Class</option>
 									<option value="either">Either</option>
