@@ -4,6 +4,7 @@ angular.module('Admission',[
   'Admission.agreement',
   'Admission.testResults',
   'Admission.servics',
+  'ui.ace',
   'ngRoute'
 ])
 .config(function($routeProvider, $httpProvider){

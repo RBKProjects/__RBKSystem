@@ -8,10 +8,10 @@
 
 		<label>Please paste your code below: يرجى لصق الحل أدناه</label>
 
-		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Code Solution" ng-model="codingTest.codeSyntax"><br>
-		</div>
-		
+		<section>
+	  		<div ui-ace ng-model="codingTest.codeSyntax">Ace here</div>
+		</section>
+
 		<button type="button" class="btn btn-lg center-block btn-block" style="background:#cc0099;color:white;" ng-click="sendCodeSyntax()">NEXT</button>
 	</div>
 </div>

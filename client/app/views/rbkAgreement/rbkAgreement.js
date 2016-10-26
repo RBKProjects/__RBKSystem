@@ -10,7 +10,7 @@ angular.module('Admission.agreement',[])
 	$scope.sendAgreement=function(){
 		var userId=$window.localStorage.getItem('user');
 		console.log(userId, $scope.agreement);
-		var nb_Q=1;
+		var nb_Q=0;
 		for(var key in $scope.agreement){
 			nb_Q++;
 			var obj={};
@@ -22,7 +22,8 @@ angular.module('Admission.agreement',[])
 				console.log('answer of question '+ nb_Q + " have been sent");
 			})
 		};
-		if(nb_Q !== $scope.questions.length){
+		console.log($scope.questions.length, nb_Q)
+		if(nb_Q !== $scope.questions.length-1){
 			alert("please answer all the questions");
 		}
 		else{
@@ -42,17 +43,18 @@ angular.module('Admission.agreement',[])
 			 	$scope.questions[resp.rows[i]['id']].push(resp.rows[i]['arabicQ']);
 				$scope.getQuestionOptions(resp.rows[i]['id']);
 			 }
-		})
+		});
 	};
 
-	$scope.getQuestionOptions=function(id,question){
-		var obj={q_id : id};
+	$scope.getQuestionOptions=function(id){
+		var obj={Q_id : id};
 		Agreement.getQuestionOptions(obj)
 		.then(function(resp){
 			if(!$scope.options[id]){
 				$scope.options[id]=[];
 			}
 			_.map(resp.data.rows,function(row){
+				console.log(row)
 					if(row['Q_id'] === id){
 						var innerAr=[];
 						innerAr.push(row['id']);

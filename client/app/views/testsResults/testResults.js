@@ -5,7 +5,7 @@ angular.module('Admission.testResults',[])
 	$scope.mindSetTest={};
 	$scope.analyticTest={};
 	$scope.codingTest={};
-	$scope.userId=$window.localStorage.getItem('user');;
+	$scope.userId=$window.localStorage.getItem('user');
 
 	$scope.sendVideoLink=function(){
 		$scope.videoLink.id=$scope.userId;
@@ -46,6 +46,7 @@ angular.module('Admission.testResults',[])
 
 	$scope.sendCodeSyntax=function(){
 		$scope.codingTest.id=$scope.userId;
+		console.log($scope.codingTest);
 		TestsResults.sendCodeSyntax($scope.codingTest)
 		.then(function(resp){
 			console.log(resp);
@@ -56,4 +57,5 @@ angular.module('Admission.testResults',[])
 	$scope.goHome=function(){
 		//$location.path('/')
 	}
+
 })
